@@ -1,6 +1,5 @@
 pipeline {
     agent any
-    
     stages {
         stage('Checkout') {
             steps {
@@ -8,13 +7,4 @@ pipeline {
                 git 'https://github.com/syammarolix/vprofile.git'
             }
         }
-        
-        stage('Build') {
-            steps {
-                 def mavenHome = tool name:"maven-3.9.3", type:"maven"
-                 def mavenCMD = "${mavenHome}/bin/mvn"
-                 sh "${mavenCMD} mvn clean "
-             }
-        }
-    }
 }
