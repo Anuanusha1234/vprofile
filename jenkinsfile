@@ -11,8 +11,10 @@ pipeline {
         
         stage('Build') {
             steps {
-                // Compile the Java code
-                sh 'javac -d target src/*.java'
+                 def mavenHome = tool name:"Maven-3.9.3", type:"maven"
+                 def mavenCMD = "${mavenHome}/bin/mvn"
+                 sh "${mavenCMD} clean package"
+        
             }
         }
         
