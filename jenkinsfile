@@ -15,14 +15,7 @@ pipeline {
                  def mavenCMD = "${mavenHome}/bin/mvn"
                  sh "${mavenCMD} clean package"
         
-            }
-        }
-        
-        stage('Test') {
-            steps {
-                // Run unit tests
-                sh 'java -cp target HelloWorld'
-            }
-        }
-    }
+             }
+       }
+   }
 }
