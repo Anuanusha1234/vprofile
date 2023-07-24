@@ -163,6 +163,21 @@
 		</plugin>
         </plugins>
     </build>
+	<distributionManagement>
+	
+	    <repository>
+	      <id>nexus</id>
+	      <name>v-profile release Nexus Repository </name>
+	      <url>http://100.24.33.233:8081/repository/maven-releases/</url>
+	    </repository>
+	    
+	    <snapshotRepository>
+	      <id>nexus</id>
+	      <name>v-profile Snapshot Nexus Repository </name>
+	      <url>http://100.24.33.233:8081/repository/maven-snapshots/</url>
+	    </snapshotRepository>
+	    
+	</distributionManagement>
 	<repositories>
     <repository>
       <id>${NEXUS-GRP-REPO}</id>
