@@ -1,0 +1,26 @@
+pipeline {
+    agent any
+    
+    stages {
+        stage('Checkout') {
+            steps {
+                // Checkout the code from the Git repository
+                git 'https://github.com/syammarolix/vprofile.git'
+            }
+        }
+        
+        stage('Build') {
+            steps {
+                // Compile the Java code
+                sh 'javac -d target src/*.java'
+            }
+        }
+        
+        stage('Test') {
+            steps {
+                // Run unit tests
+                sh 'java -cp target HelloWorldTest'
+            }
+        }
+    }
+}
