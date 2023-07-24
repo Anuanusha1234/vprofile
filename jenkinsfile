@@ -19,7 +19,7 @@ pipeline {
         stage('Test') {
             steps {
                 // Run unit tests
-                sh 'java -cp target HelloWorldTest'
+                sh 'java -cp target HelloWorld'
             }
         }
     }
