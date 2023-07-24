@@ -1,10 +1,11 @@
-pipeline {
-    agent any
-    stages {
-        stage('Checkout') {
-            steps {
-                // Checkout the code from the Git repository
-                git 'https://github.com/syammarolix/vprofile.git'
-            }
-        }
+node{
+stage('Get Code'){ 
+git branch: '*/master', credentialsId: 'e8505514-8949-46fa-8fc2-536d211a37b4', url: 'https://github.com/syammarolix/vprofile.git'
+ }
+
+  stage('Build package'){
+        def mavenHome = tool name:"maven-3.9.3", type:"maven"
+        def mavenCMD = "${mavenHome}/bin/mvn"
+        sh "${mavenCMD} clean package"
+  }
 }
