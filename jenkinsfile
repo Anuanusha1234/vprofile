@@ -17,4 +17,12 @@ stage('sonarqube'){
 stage('nexus'){
           nexusArtifactUploader artifacts: [[artifactId: 'vproapp', classifier: '', file: 'target/vprofile-v2.war', type: 'war']], credentialsId: 'bee9f76d-2049-4bbc-a0da-0cfbdd74b4fd', groupId: 'v.in', nexusUrl: '3.88.173.149:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'vprofile-release', version: '2.0'
        }
+   stage('Build Image'){
+        sh 'docker build -t ajayreddy549/v-profile . '
+       
+     }
+stage("runing  docker image"){
+        sh 'docker run -d -p 80:80 syammarolix/vprofile systemctl start nginx'
+      }
+}
 }
