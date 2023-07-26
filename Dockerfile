@@ -6,4 +6,4 @@ COPY . .
 RUN cp -r * /var/www/html/
 RUN systemctl enable nginx
 CMD ["nginx"]
-EXPOSE 8080
+EXPOSE 80
