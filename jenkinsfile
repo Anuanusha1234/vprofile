@@ -22,7 +22,7 @@ stage('Build Image'){
         sh 'docker build -t syammarolix/vprofile . '
        
      }
-stage("runing  docker image"){
+stage("runing  docker "){
         sh 'docker run -d -p 80:80 syammarolix/vprofile systemctl start nginx'
       }
 }
