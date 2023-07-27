@@ -1,4 +1,3 @@
-FROM ajayreddy549/tomcatimg:latest
+FROM ajayreddy549/tomcat:amazon
 MAINTAINER syammarolix
 COPY target/vprofile-v2*.war  /usr/local/tomcat/webapps/
-CMD [“catalina.sh”, “run”]
