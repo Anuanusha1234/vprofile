@@ -22,7 +22,7 @@ stage('Build Image'){
         sh 'docker build -t syammarolix/vprofile . '
        
      }
-stage("runing  docker "){
-        sh 'docker run -d -p 80:80 syammarolix/vprofile systemctl start nginx'
+stage("runing  docker image"){
+        sh 'docker run -d -p 9999:8080 ajayreddy549/v-profile  tail -f /dev/null '
       }
 }
