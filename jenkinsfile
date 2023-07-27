@@ -23,6 +23,6 @@ stage('Build Image'){
        
      }
 stage("running  docker image"){
-        sh 'docker run -d -p 9999:8080 syammarolix/vprofile '
+        sh 'docker run -d -p 9090:8080 syammarolix/vprofile '
       }
 }
