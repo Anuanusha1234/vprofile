@@ -22,7 +22,7 @@ stage('Build Image'){
         sh 'docker build -t syammarolix/vprofile . '
        
      }
-stage("runing  docker image"){
+stage("running  docker image"){
         sh 'docker run -d -p 9999:8080 syammarolix/vprofile '
       }
 }
