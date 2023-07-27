@@ -1,9 +1,4 @@
-FROM ubuntu
+FROM syammarolix/tomcatimg:latest
 MAINTAINER syammarolix
-
-RUN apt-get update && apt-get install nginx git systemctl -y
-COPY . .
-RUN cp -r * /var/www/html/
-RUN systemctl enable nginx
-CMD ["nginx"]
-EXPOSE 80
+COPY target/vprofile-v2*.war  /usr/local/tomcat/webapps/
+CMD [“catalina.sh”, “run”]
