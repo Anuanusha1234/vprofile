@@ -1,5 +1,5 @@
 node{
-stage('Get Code'){ 
-git credentialsId: '08dda1a3-0c38-4a25-a4d5-103b9a36e4be', url: 'https://github.com/Anuanusha1234/vprofile.git' }
-
+  stage('Get Code'){ 
+    git branch: '*/master', credentialsId: '08dda1a3-0c38-4a25-a4d5-103b9a36e4be', url: 'https://github.com/Anuanusha1234/vprofile.git'
+   }
 }
