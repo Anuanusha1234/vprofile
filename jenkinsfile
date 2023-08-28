@@ -14,6 +14,6 @@ stage('sonarqube'){
             sh "${mavenCMD} sonar:sonar"
      }
 stage('nexus'){
-         nexusArtifactUploader artifacts: [[artifactId: 'vproapp', classifier: '', file: 'target/vprofile-v2.war', type: 'war']], credentialsId: '', groupId: 'v.in', nexusUrl: '52.87.236.227:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'vprofile-release', version: '2.0'
+         nexusArtifactUploader artifacts: [[artifactId: 'vproapp', classifier: '', file: 'target/vprofile-v2.war', type: 'war']], credentialsId: '6db4742d-3c9a-44e3-9ec4-9f4f6abb7471', groupId: 'v.in', nexusUrl: '52.87.236.227:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'vprofile-release', version: '2.0'
        }
 }
