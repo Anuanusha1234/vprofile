@@ -1,4 +1,10 @@
 node{
   stage('Get Code'){ 
       git  credentialsId: 'ff76419c-83d9-4fc2-bd3d-43dc84729141', url: 'https://github.com/Anuanusha1234/vprofile.git'   }
+
+  stage('Build package'){
+        def mavenHome = tool name:"maven-3.9.3", type:"maven"
+        def mavenCMD = "${mavenHome}/bin/mvn"
+        sh "${mavenCMD} clean package"
+     }
 }
