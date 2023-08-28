@@ -1,28 +1,5 @@
 node{
 stage('Get Code'){ 
-git credentialsId: '6fce09a8-32d9-4e1a-91f4-79f798c06547', url: 'https://github.com/syammarolix/vprofile.git'
- }
+git credentialsId: '08dda1a3-0c38-4a25-a4d5-103b9a36e4be', url: 'https://github.com/Anuanusha1234/vprofile.git' }
 
-  stage('Build package'){
-        def mavenHome = tool name:"maven-3.9.3", type:"maven"
-        def mavenCMD = "${mavenHome}/bin/mvn"
-        sh "${mavenCMD} clean package"
-     }
-
-stage('sonarqube'){
-            def mavenHome = tool name:"maven-3.9.3", type:"maven"
-            def mavenCMD = "${mavenHome}/bin/mvn"
-            sh "${mavenCMD} sonar:sonar"
-     }
-stage('nexus'){
-          nexusArtifactUploader artifacts: [[artifactId: 'vproapp', classifier: '', file: 'target/vprofile-v2.war', type: 'war']], credentialsId: 'bee9f76d-2049-4bbc-a0da-0cfbdd74b4fd', groupId: 'v.in', nexusUrl: '3.88.173.149:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'vprofile-release', version: '2.0'
-       }
-
-stage('Build Image'){
-        sh 'docker build -t syammarolix/vprofile . '
-       
-     }
-stage("running  docker image"){
-        sh 'docker run -d -p 9090:8080 syammarolix/vprofile '
-      }
 }
